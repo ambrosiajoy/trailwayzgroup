@@ -1,60 +1,60 @@
 .films {
-  display: inline;
-  max-width: 11.875em;
-  max-height: 12.5em;
+	display: inline;
+	max-width: 11.875em;
+	max-height: 12.5em;
 }
 
 .col-md-10 {
-  color: blue;
-  font: helvetica, sans-serif;
+	color: blue;
+	font: helvetica, sans-serif;
 }
 
 .button {
-  background-color: gray;
-  max-width: 2.5em;
-  max-height: 2em;
-  border: solid, black, .125 em;
-  color: black;
+	background-color: white;
+	max-width: 2.5em;
+	max-height: 2em;
+	border: solid, black, .125 em;
+	color: black;
 }
 
 .bio {
-  font: helvetica, sans-serif;
-  font-size: 1em;
+	font: helvetica, sans-serif;
+	font-size: 1em;
 }
 
 .box {
-  display: block;
-  box-sizing: border-box;
+	display: block;
+	box-sizing: border-box;
 }
 
 #fern {
-  min-height: 12.5em;
+	min-height: 12.5em;
 }
 
 #ferngully {
-  min-height: 12.5em;
-  min-width: 16.75em;
+	min-height: 12.5em;
+	min-width: 16.75em;
 }
 
 #poet {
-  padding-left: 15px;
-  padding-right: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 @media screen and (min-width: 1024px) {
-  body {
-      font-size: 100%;
-  }
+	body {
+		font-size: 100%;
+	}
 }
 
 @media screen and (min-width: 980px) {
-  body {
-      font-size: 100%;
-  }
+	body {
+		font-size: 100%;
+	}
 }
 
 @media screen and (min-width: 480px) {
-  body {
-      font-size: 100%;
-  }
+	body {
+		font-size: 100%;
+	}
 }
