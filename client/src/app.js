@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 
-var http = require('http');
 
-function onRequest(request, response) {
-    response.writeHead(200, {'Content-Type': 'text/plain'});
-    response.write('Thank You!');
-    response.end();
-}
+//var http = require('http');
 
-http.createServer(onRequest).listen(8000);
+//response.writeHead(200, {'Content-Type': 'text/plain'});
+//    function onRequest(request, response) {
+//    response.write('Thank You!');
+//    response.end();
+//}
+//
+//http.createServer(onRequest).listen(8000);
 function App(props) {
     
   
