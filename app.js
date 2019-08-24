@@ -15,7 +15,7 @@ client.connect(err => {
   client.close();
 });
 
-mongoose.connect('mongodb://localhost:27017/mongodb+srv://AmbrosiaJoy:Mariah15Sylvia14@thingsidontneed-59p4j.gcp.mongodb.net/test?retryWrites=true&w=majority'); 
+mongoose.connect('mongodb+srv://AmbrosiaJoy:Mariah15Sylvia14@thingsidontneed-59p4j.gcp.mongodb.net/test?retryWrites=true&w=majority'); 
 var db=mongoose.connection; 
 db.on('error', console.log.bind(console, "connection error")); 
 db.once('open', function(callback){ 
