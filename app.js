@@ -2,10 +2,20 @@ var createError = require('http-errors');
 var express = require('express');
 var bodyParser=require("body-parser");
 var path = require('path');
-var mongodb = require('mongodb');
+//var mongodb = require('mongodb');
 
-const mongoose = require('mongoose'); 
-mongoose.connect('mongodb://localhost:27017/gfg'); 
+const mongoose = require('mongoose');
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://AmbrosiaJoy:Mariah15Sylvia14@thingsidontneed-59p4j.gcp.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+mongoose.connect('mongodb://localhost:27017/mongodb+srv://AmbrosiaJoy:Mariah15Sylvia14@thingsidontneed-59p4j.gcp.mongodb.net/test?retryWrites=true&w=majority'); 
 var db=mongoose.connection; 
 db.on('error', console.log.bind(console, "connection error")); 
 db.once('open', function(callback){ 
@@ -15,8 +25,8 @@ db.once('open', function(callback){
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./server/routes/index.js');
+var usersRouter = require('./server/routes/users.js');
 
 var app = express();
 
@@ -37,35 +47,36 @@ app.use(bodyParser.urlencoded({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.post('/post-CustomerForm', function (req, res) {
-  var FirstName = req.body.FirstName;
-  var LastName = req.body.LastName;
-  var Email = req.body.Email;
-  var Address = req.body.Address;
-  var City = req.body.City;
-  var State = req.body.State;
-  var Zip = req.body.Zip;
-  var Destination = req.body.Destination},
+app.post('/sign_up', function(req,res){ 
+  var name = req.body.name; 
+  var email =req.body.email; 
+  var destination = req.body.destination; 
+  var phone =req.body.phone; 
 
+  var data = { 
+    "name": name, 
+    "email":email, 
+    "destination":destination, 
+    "phone":phone 
+} 
   db.collection('details').insertOne(data,function(err, collection){ 
     if (err) throw err; 
     console.log("Record inserted Successfully"); 
           
-}));
-
-  return res.redirect('signup_success.html'); 
-
-
+});
+router.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  next();
+});
   app.get('/',function(req,res){ 
     res.set({ 
         'Access-control-Allow-Origin': '*'
-        }); 
-    return res.redirect('index.html'); 
-    }).listen(3000) 
-      
+        });  
       
     console.log("server listening at port 3000"); 
-
+    
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -82,4 +93,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = app});
+return res.redirect('index.html'); 
+}).listen(3000)
+//return res.redirect('signup_success.html'); 
+
+
