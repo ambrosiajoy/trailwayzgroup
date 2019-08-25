@@ -13,12 +13,16 @@
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "devDependencies": {
-    "concurrently": "^3.5.1"
+    "concurrently": "^3.5.1",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "mongodb": "^3.3.0",
+    "mongodb": "^3.3.1",
     "mongoose": "^5.6.10",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.1",
