@@ -2,20 +2,26 @@ var createError = require('http-errors');
 var express = require('express');
 var bodyParser=require("body-parser");
 var path = require('path');
-//var mongodb = require('mongodb');
+var mongodb = require('mongodb');
 
 const mongoose = require('mongoose');
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://AmbrosiaJoy:Mariah15Sylvia14@thingsidontneed-59p4j.gcp.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
+var MongoClient = require('mongodb').MongoClient
+  , assert = require('assert');
+
+const routes = require('./server/routes/index.js');  
+
+// Connection URL
+var url = 'mongodb+srv://trailwayz-tpznr.mongodb.net/test" --username irishjoy13';
+// Use connect method to connect to the Server
+MongoClient.connect(url, function(err, db) {
+  assert.equal(null, err);
+  console.log("Connected correctly to server");
+
+  db.close();
 });
 
-mongoose.connect('mongodb+srv://AmbrosiaJoy:Mariah15Sylvia14@thingsidontneed-59p4j.gcp.mongodb.net/test?retryWrites=true&w=majority'); 
+mongoose.connect('mongo "mongodb+srv://trailwayz-tpznr.mongodb.net/test" --username irishjoy13'); 
 var db=mongoose.connection; 
 db.on('error', console.log.bind(console, "connection error")); 
 db.once('open', function(callback){ 
@@ -57,14 +63,32 @@ app.post('/sign_up', function(req,res){
     "name": name, 
     "email":email, 
     "destination":destination, 
-    "phone":phone 
-} 
-  db.collection('details').insertOne(data,function(err, collection){ 
-    if (err) throw err; 
-    console.log("Record inserted Successfully"); 
+    "phone":phone
+  }
+
+    app.post('/addCustomer', uploads.single("data"), (request, response) => {
+      let customer = request.file.path;
+      var data = new Data({
+          Name: request.body.name,
+          Email: request.body.email,
+          Destination: request.body.destination,
+          Phone: request.body.phone
+      });
+      customer.save().then((document) => {
+          response.redirect('/listCustomer');
+      }, (error) => {
+          response.status(400).send(error);
+          //response.send(JSON.stringify(response.body));
+      });
+    });
+    
+},
+  //db.collection('details').insertOne(data,function(err, collection){ 
+  //  if (err) throw err; 
+  //  console.log("Record inserted Successfully"); 
           
-});
-router.use(function(req, res, next) {
+);
+routes.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
@@ -94,8 +118,9 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app});
-return res.redirect('index.html'); 
-}).listen(3000)
+
+//return res.redirect('index.html'); 
+
 //return res.redirect('signup_success.html'); 
 
 

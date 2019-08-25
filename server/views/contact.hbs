@@ -1,35 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trailwayz</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <a class="button" href="index.html">Home</a>
-            <a class="button" href="portfolio.html">Portfolio</a>
-            <a class="button" href="contact.html">Contact</a>
-        </nav>
-    </header>
+<h1>Add a new customer!</h1>
+<form action="/actor" method="POST">
+    <div>
+        <label for="name">Name: </label>
+        <input type="text" name="name">
+    </div>
+    <div>
+        <label for="email">Email: </label>
+        <input type="text" name="email">
+    </div>
+    <div>
+        <label for="destination">Destination </label>
+        <input type="text" name="destination">
+    </div>
+    <div>
+        <label for="phone">Phone Number </label>
+        <input type="text" name="phone">
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
 
-    <section>
-        <div class="bio">   
-            <h3>Sign Up for the Travel Club</h3>
-            <form>
-                <label>First Name:<input class="box" type="text"></label><br>
-                <label>Last Name:<input class="box" type="text"></label><br>
-                <label>Email:<input class="box" type="text"></label><br>
-                <label>Street Address:<input class="box" type="text"></label><br>
-                <label>City:<input class="box" type="text"></label><br>
-                <label>State:<input class="box" type="text"></label><br>
-                <label>Zip:<br><input type="text"></label><br>
-                <input class="box" type="submit" value="Submit">
-            </form>
-        </div>
-    </section>
-</body>
-</html>
+<br>
+{{#each customer}}
+<li>{{name}}</li><br></br>
+<li> {{email}}</li><br></br>
+<li>{{destination}}</li><br></br>
+<li>{{phone}}</li>
+{{/each}}
+</ul>
