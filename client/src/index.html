@@ -12,6 +12,7 @@ integrity=
 "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
 crossorigin="anonymous"> 
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
@@ -82,24 +83,24 @@ crossorigin="anonymous">
                             <p>Maya Ruins Tours</p></div>
                         <div class="column"></div>
                             <a><br href="http://classictajtours.com/north-india/taj-mahal-rajasthan-6-day-tour.html?gclid=Cj0KCQjwkK_qBRD8ARIsAOteukDij1KDnHLuauUBhcje-Mfm8zt_3oprlZdwTAxsnG9S6qlJVBQJ3AgaAjYdEALw_wcB">
-                            <img src="https://www.noblehousetours.com/wp-content/uploads/2017/05/tajmahal-agra-india.jpg" alt="Image result for taj mahal tours" width="450" height="250">
+                            <img src="https://www.noblehousetours.com/wp-content/uploads/2017/05/tajmahal-agra-india.jpg" alt="Image result for taj mahal tours" width="450" height="250" class="responsive">
                             <p>Taj Mahal Tours</p></div></a><br>
             </div>
             </div>
         </section><br></br>
 
         <div class="dropdown">
-            <button class="dropbtn">More Exciting Destinations</button>
+            <button class="dropbtn">More Exciting Destinations <i class="fa fa-caret-down"></i>
             <div class="dropdown-content">
               <a href="https://www.travelwyoming.com/national-parks-and-monuments/yellowstone">Yellowstone National Park<src = "mongorestore --host Trailwayz-shard-0/trailwayz-shard-00-00-tpznr.mongodb.net:27017,trailwayz-shard-00-01-tpznr.mongodb.net:27017,trailwayz-shard-00-02-tpznr.mongodb.net:27017 --ssl --username irishjoy13 --password Mariah15Sylvia14 --authenticationDatabase admin "_id":{"$oid":"5d622bff1c9d4400000e9c96"}></src></a><br></br>
               <a href="https://www.inspirock.com/united-states/great-smoky-mountains-national-park-trip-planner">Great Smokey Mountains<src = "mongorestore --host Trailwayz-shard-0/trailwayz-shard-00-00-tpznr.mongodb.net:27017,trailwayz-shard-00-01-tpznr.mongodb.net:27017,trailwayz-shard-00-02-tpznr.mongodb.net:27017 --ssl --username irishjoy13 --password Mariah15Sylvia14 --authenticationDatabase admin"_id":{"$oid":"5d622cd31c9d4400000e9ca0"},"destination":"The Great Smokey Mountains" --ssl --username irishjoy13 --password Mariah15Sylvia14 --authenticationDatabase admin</a><br></br>
-              <a href="https://www.inspirock.com/united-states/big-bend-national-park-trip-planner">Big Bend National Park<src = "mongorestore --host Trailwayz-shard-0/trailwayz-shard-00-00-tpznr.mongodb.net:27017,trailwayz-shard-00-01-tpznr.mongodb.net:27017,trailwayz-shard-00-02-tpznr.mongodb.net:27017 --ssl --username irishjoy13 --password Mariah15Sylvia14 --authenticationDatabase admin"_id":{"$oid":"5d622cbf1c9d4400000e9c9e"},"destination":"Big Bend National Park"}</a>
-            </div>
-          </div> 
+              <a href="https://www.inspirock.com/united-states/big-bend-national-park-trip-planner">Big Bend National Park<src = "mongorestore --host Trailwayz-shard-0/trailwayz-shard-00-00-tpznr.mongodb.net:27017,trailwayz-shard-00-01-tpznr.mongodb.net:27017,trailwayz-shard-00-02-tpznr.mongodb.net:27017 --ssl --username irishjoy13 --password Mariah15Sylvia14 --authenticationDatabase admin"_id":{"$oid":"5d622cbf1c9d4400000e9c9e"},"destination":"Big Bend National Park"} </a><br></br></src>
+            </div></a> <br></br>
+          </div></button>
 ​
         <section>
             <div class="col-md-6 main">
-                <form action="/sign_up" method="post">
+                <form href = "contact.js" action="/contact" method="post">
                 <h1> Request Information on Your Dream Destination </h1>
                 <input class="box" type="text" name="name" id="name"
                 placeholder="Name"  required /><br>
@@ -110,7 +111,7 @@ crossorigin="anonymous">
                 <input class="box" type="text" name="phone" id="phone"
                 placeholder="Phone Number " required/><br>
                             <br>
-                <input type="submit" id="submitDetails"
+                <input href ="contact.hbs" type="submit" id="submitDetails"
                 name="submitDetails" value="Submit" /><br>
                 </form>
             </div>

@@ -8,21 +8,32 @@ var mongodb = require('mongodb');
  // password: 'Mariah15Sylvia14',
 //  database: 'TrailWayz.CustomerForm'
 //})
-
+var Contact = require(`./contact`);
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Trail Wayz' });
+router.get('/contact', function(req, res) {
+  res.render('contact');
 });
 
-router.post('/data', function(req, res, next) {
-  console.log(req.data);
-  const newCustomer = { 
-    name: req.data.name,
-    email: req.data.email,
-    destination: req.data.destination,
-    phone: req.data.phone
-  };
+router.post('/contact', function(req, res) {
+  console.log(req.body);
+    var name = req.body.name;
+    var email = req.body.email;
+    var destination = req.body.destination;
+    var phone = req.body.phone;
+  
+var newContact = new Contact({
+  name: name,
+  email: email,
+  destination: destination,
+  phone: phone
+  });
+  
+  Contact.createContact(newContact, function(err, contact){
+
+  });
+
+  res.redirect('/');
 });
 
 module.exports = router;

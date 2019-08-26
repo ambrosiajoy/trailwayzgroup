@@ -28,20 +28,6 @@
 	margin-left: 50px;
 }
 
-#fern {
-	min-height: 12.5em;
-}
-
-#ferngully {
-	min-height: 12.5em;
-	min-width: 16.75em;
-}
-
-#poet {
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
 @media screen and (min-width: 1024px) {
 	body {
 		font-size: 100%;
@@ -92,3 +78,43 @@ input[type=submit] {
     margin: 4px 2px; 
     border-radius: 10px; 
 } 
+.dropbtn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+.dropbtn .dropdown {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+  }
+.dropdown-content {
+	display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+.dropbtn:hover .dropdown-content {
+	display: block;
+  }
+.dropdown-content:hover {
+	background-color: #eee;
+	color: black;
+  }  
+  .dropdown-content a {
+	float: left;
+	color: white;
+	text-decoration: none;
+  }  
