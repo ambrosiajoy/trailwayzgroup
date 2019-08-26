@@ -16,7 +16,7 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "sequelize": "^4.44.0"
+    "sequelize": "^6.0.0"
   },
   "devDependencies": {
     "concurrently": "^3.5.1",
