@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 
 //var http = require('http');
@@ -10,14 +10,14 @@ import React, {useState} from 'react';
 //}
 //
 //http.createServer(onRequest).listen(8000);
+
 function App(props) {
-    
-  
-    return (
-      <div>
-        <h1>Client Works!</h1>
-      </div>
+    return ( <
+        div >
+        <
+        h1 > Client Works! < /h1> < /
+        div >
     );
-  }
-  
-  export default App;
+}
+
+export default App;
