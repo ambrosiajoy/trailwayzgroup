@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <center>
+        <a href="https://imgur.com/KXfX4bV"><img src="https://i.imgur.com/KXfX4bVh.png" title="source: imgur.com" class="img-responsive" /></a>
+    </center>
     <title>Trailwayz</title>
-    <link rel="stylesheet" 
-href= 
-"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-integrity= 
-"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
-crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <header>
         <div class="bio">
             <div class="col-md-2">
-            <div class="col-md-10"> <h1> Trailwayz </h1>
+            <div class="col-md-10">
                 <h3 class="col-md-5">Find Your Way with Trail Wayz</h3>
         </div>
     </header>
@@ -85,8 +86,8 @@ crossorigin="anonymous">
             </div>
         </section><br></br>
 
-        <div class="dropdown">
-            <button class="dropbtn">More Exciting Destinations</button>
+    <div class="dropdown">
+        <button class="dropbtn">More Exciting Destinations <i class="fa fa-caret-down"></i>
             <div class="dropdown-content">
               <a href="https://www.travelwyoming.com/national-parks-and-monuments/yellowstone">Yellowstone National Park<src = "mongorestore --host Trailwayz-shard-0/trailwayz-shard-00-00-tpznr.mongodb.net:27017,trailwayz-shard-00-01-tpznr.mongodb.net:27017,trailwayz-shard-00-02-tpznr.mongodb.net:27017 --ssl --username irishjoy13 --password Mariah15Sylvia14 --authenticationDatabase admin "_id":{"$oid":"5d622bff1c9d4400000e9c96"}></src></a><br></br>
               <a href="https://www.inspirock.com/united-states/great-smoky-mountains-national-park-trip-planner">Great Smokey Mountains<src = "mongorestore --host Trailwayz-shard-0/trailwayz-shard-00-00-tpznr.mongodb.net:27017,trailwayz-shard-00-01-tpznr.mongodb.net:27017,trailwayz-shard-00-02-tpznr.mongodb.net:27017 --ssl --username irishjoy13 --password Mariah15Sylvia14 --authenticationDatabase admin"_id":{"$oid":"5d622cd31c9d4400000e9ca0"},"destination":"The Great Smokey Mountains" --ssl --username irishjoy13 --password Mariah15Sylvia14 --authenticationDatabase admin</a><br></br>
@@ -96,19 +97,14 @@ crossorigin="anonymous">
 
         <section>
             <div class="col-md-6 main">
-                <form action="/sign_up" method="post">
-                <h1> Request Information on Your Dream Destination </h1>
-                <input class="box" type="text" name="name" id="name"
-                placeholder="Name"  required /><br>
-                <input class="box" type="email" name="email" id="email"
-                placeholder="E-Mail " required /><br>
-                <input class="box" type="destination" name="destination"
-                id="destination" placeholder="Destination " required/><br>
-                <input class="box" type="text" name="phone" id="phone"
-                placeholder="Phone Number " required/><br>
-                            <br>
-                <input type="submit" id="submitDetails"
-                name="submitDetails" value="Submit" /><br>
+                <form href="contact.js" action="/contact" method="post">
+                    <h1> Request Information on Your Dream Destination </h1>
+                    <input class="box" type="text" name="name" id="name" placeholder="Name" required /><br>
+                    <input class="box" type="email" name="email" id="email" placeholder="E-Mail " required /><br>
+                    <input class="box" type="destination" name="destination" id="destination" placeholder="Destination " required/><br>
+                    <input class="box" type="text" name="phone" id="phone" placeholder="Phone Number " required/><br>
+                    <br>
+                    <input href="contact.hbs" type="submit" id="submitDetails" name="submitDetails" value="Submit" /><br>
                 </form>
             </div>
             </section>
@@ -124,6 +120,7 @@ crossorigin="anonymous">
                     <path d="M256 164.1c-50.7 0-91.9 41.1-91.9 91.9s41.1 91.9 91.9 91.9 91.9-41.1 91.9-91.9S306.7 164.1 256 164.1zM256 315.6c-32.9 0-59.6-26.7-59.6-59.6s26.7-59.6 59.6-59.6 59.6 26.7 59.6 59.6S288.9 315.6 256 315.6z"></path>
                     <circle cx="351.5" cy="160.5" r="21.5"></circle>
                 </svg></a></div>
-    </footer>
+        </footer>
 </body>
+
 </html>

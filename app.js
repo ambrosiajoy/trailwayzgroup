@@ -3,6 +3,7 @@ var express = require('express');
 var bodyParser=require("body-parser");
 var path = require('path');
 var mongodb = require('mongodb');
+var logger = require('morgan');
 
 const mongoose = require('mongoose');
 
@@ -26,13 +27,14 @@ var db=mongoose.connection;
 db.on('error', console.log.bind(console, "connection error")); 
 db.once('open', function(callback){ 
     console.log("connection succeeded"); 
+
 }) 
 
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./server/routes/index.js');
-var usersRouter = require('./server/routes/users.js');
+var index = require('./server/routes/index.js');
+var users = require('./server/routes/users.js');
 
 var app = express();
 
@@ -50,44 +52,44 @@ app.use(bodyParser.urlencoded({
     extended: true
 })); 
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', index);
+app.use('/users', users);
 
-app.post('/sign_up', function(req,res){ 
-  var name = req.body.name; 
-  var email =req.body.email; 
-  var destination = req.body.destination; 
-  var phone =req.body.phone; 
+//app.post('/sign_up', function(req,res){ 
+//  var name = req.body.name; 
+//  var email =req.body.email; 
+//  var destination = req.body.destination; 
+//  var phone =req.body.phone; 
 
-  var data = { 
-    "name": name, 
-    "email":email, 
-    "destination":destination, 
-    "phone":phone
-  }
+//  var data = { 
+//    "name": name, 
+//    "email":email, 
+//    "destination":destination, 
+//    "phone":phone
+//  }
 
-    app.post('/addCustomer', uploads.single("data"), (request, response) => {
-      let customer = request.file.path;
-      var data = new Data({
-          Name: request.body.name,
-          Email: request.body.email,
-          Destination: request.body.destination,
-          Phone: request.body.phone
-      });
-      customer.save().then((document) => {
-          response.redirect('/listCustomer');
-      }, (error) => {
-          response.status(400).send(error);
-          //response.send(JSON.stringify(response.body));
-      });
-    });
-    
-},
+//    app.post('/addCustomer', uploads.single("data"), (request, response) => {
+ //     let customer = request.file.path;
+//      var data = new Data({
+//          Name: request.body.name,
+//          Email: request.body.email,
+//          Destination: request.body.destination,
+//          Phone: request.body.phone
+ //     });
+//      customer.save().then((document) => {
+//          response.redirect('/listCustomer');
+//      }, (error) => {
+//        response.status(400).send(error);
+//        //response.send(JSON.stringify(response.body));
+ //       });
+//      });
+      
+//    //},
   //db.collection('details').insertOne(data,function(err, collection){ 
   //  if (err) throw err; 
   //  console.log("Record inserted Successfully"); 
           
-);
+//);
 routes.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');

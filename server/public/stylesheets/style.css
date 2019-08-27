@@ -1,57 +1,83 @@
+.img-responsive {
+    margin-left: auto;
+    margin-right: auto;
+    float: center;
+}
+
 .films {
-	display: inline;
-	max-width: 11.875em;
-	max-height: 12.5em;
+    display: inline;
+    max-width: 11.875em;
+    max-height: 12.5em;
+}
+
+.col-sm-12 {
+    max-width: 100%;
+    box-sizing: border-box;
+    float: left;
 }
 
 .col-md-10 {
-	color: blue;
-	font: helvetica, sans-serif;
+    color: blue;
+    font: helvetica, sans-serif;
 }
 
 .button {
-	background-color: white;
-	max-width: 2.5em;
-	max-height: 2em;
-	border: solid, black, .125 em;
-	color: black;
+    background-color: white;
+    max-width: 2.5em;
+    max-height: 2em;
+    border: solid, black, .125 em;
+    color: black;
 }
 
 .bio {
-	font: helvetica, sans-serif;
-	font-size: 1em;
+    font: helvetica, sans-serif;
+    font-size: 1em;
 }
 
 .box {
-	display: block;
-	box-sizing: border-box;
-	margin-left: 50px;
-}
-
-#fern {
-	min-height: 12.5em;
-}
-
-#ferngully {
-	min-height: 12.5em;
-	min-width: 16.75em;
-}
-
-#poet {
-	padding-left: 15px;
-	padding-right: 15px;
+    display: block;
+    box-sizing: border-box;
+    margin-left: 50px;
 }
 
 @media screen and (min-width: 1024px) {
-	body {
-		font-size: 100%;
-	}
+    body {
+        font-size: 100%;
+    }
 }
 
 @media screen and (min-width: 980px) {
-	body {
-		font-size: 100%;
-	}
+    body {
+        font-size: 100%;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    body {
+        font-size: 100%;
+    }
+}
+
+.main {
+    padding: 20px;
+    font-family: 'Helvetica', serif;
+    box-shadow: 5px 5px 7px 5px #888888;
+}
+
+.main h1 {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Helvetica', serif;
+}
+
+input {
+    font-family: 'Helvetica', serif;
+    width: 100%;
+    font-size: 20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid #767474;
 }
 
 @media screen and (min-width: 480px) {
